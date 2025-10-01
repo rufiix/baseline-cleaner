@@ -1,0 +1,11 @@
+# Dependencies
+/node_modules
+
+# Build output
+/dist
+
+# Oclif manifest
+/oclif.manifest.json
+
+# OS / IDE files
+.DS_Store

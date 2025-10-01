@@ -1,0 +1,14 @@
+{
+  "intersection-observer": {
+    "featureId": "api.IntersectionObserver",
+    "label": "Intersection Observer API"
+  },
+  "whatwg-fetch": {
+    "featureId": "fetch",
+    "label": "Fetch API"
+  },
+  "dialog-polyfill": {
+    "featureId": "html.elements.dialog",
+    "label": "Dialog element"
+  }
+}
