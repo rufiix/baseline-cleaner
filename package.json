@@ -1,12 +1,17 @@
 {
   "name": "baseline-cleaner",
-  "version": "1.0.0",
+  "version": "1.0.10",
   "description": "",
   "main": "index.js",
+  "bin": {
+  "baseline-cleaner": "./dist/bin/run.js"
+},
   "scripts": {
-    "build": "tsc && node scripts/copy-bin.js",
+ 
+"build": "tsc && node scripts/copy-assets.js",
     "start": "npm run build && node ./dist/bin/run.js analyze",
     "prepack": "npm run build && oclif manifest"
+    
   },
    "files": [
   "/dist",
@@ -18,6 +23,7 @@
   "type": "module",
   "oclif": {
     "commands": "./dist/commands",
+    "default": "analyze",
     "bin": "baseline-cleaner",
    
     "plugins": [

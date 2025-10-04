@@ -1,6 +1,6 @@
 {
   "intersection-observer": {
-    "featureId": "api.IntersectionObserver",
+    "featureId": "intersection-observer",
     "label": "Intersection Observer API"
   },
   "whatwg-fetch": {
@@ -10,5 +10,9 @@
   "dialog-polyfill": {
     "featureId": "html.elements.dialog",
     "label": "Dialog element"
+  },
+  "@oddbird/popover-polyfill": {
+    "featureId": "popover",
+    "label": "Popover API"
   }
 }

@@ -46,23 +46,22 @@ export default class Analyze extends Command {
   static override description = 'Analyzes the project for replaceable libraries';
 
   public async run(): Promise<void> {
+ 
     const projectRoot = process.cwd();
 
     try {
       const packageJsonPath = path.join(projectRoot, 'package.json');
       const packageJsonContent = await fs.readFile(packageJsonPath, 'utf-8');
       const packageJson = JSON.parse(packageJsonContent);
-      const mapPath = path.join(this.config.root, 'src', 'library-map.json');
+    const mapPath = path.join(this.config.root, 'dist', 'library-map.json');
       const mapContent = await fs.readFile(mapPath, 'utf-8');
       const libraryMap = JSON.parse(mapContent);
       const projectDependencies = { ...packageJson.dependencies, ...packageJson.devDependencies };
       const suspects = Object.keys(projectDependencies).filter(dep => dep in libraryMap);
-
-      if (suspects.length === 0) {
-        // This will be replaced by an Ink component later
-        console.log('✅ No potential libraries to replace were found in package.json.');
-        return;
-      }
+if (suspects.length === 0) {
+  render(<Report recommendations={[]} />);
+  return;
+}
 
       const sourceFiles = await findSourceFiles(projectRoot);
       const usedSuspects = new Set<string>();
